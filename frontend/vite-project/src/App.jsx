@@ -1,16 +1,14 @@
 import { useState } from 'react'
-
+import {Link,Routes,Route} from "react-router-dom";
+import Product from "./Product.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-      <>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-
-      </>
+      <Routes>
+          <Route path="product.jsx" element={<Product/>}/>
+      </Routes>
   )
 }
 
