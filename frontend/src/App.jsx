@@ -1,12 +1,14 @@
-import { useState } from 'react'
 import {Button} from "@nextui-org/react";
+import ProductsPage from "./ProductsPage.jsx";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-        <Button>click</Button>
+        <Routes>
+            <Route path="/ProductsPage.jsx" element={<ProductsPage/>}/>
+        </Routes>
     </>
   )
 }
