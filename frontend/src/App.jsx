@@ -1,6 +1,6 @@
-import {Button} from "@nextui-org/react";
-import ProductsPage from "./ProductsPage.jsx";
 import {Route, Routes} from "react-router-dom";
+import ProductsPage from "./ProductsPage.jsx";
+import Cart from "./Cart.jsx";
 
 function App() {
 
@@ -8,6 +8,7 @@ function App() {
     <>
         <Routes>
             <Route path="/ProductsPage.jsx" element={<ProductsPage/>}/>
+            <Route path="/Cart.jsx" element={<Cart/>}/>
         </Routes>
     </>
   )

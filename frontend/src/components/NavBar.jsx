@@ -1,31 +1,34 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
+import {useSelector} from "react-redux";
+import {Link} from 'react-router-dom'
 
 export default function NavBar() {
+    const cartItems = useSelector(state => state.cart.cart)
     return (
-        <Navbar>
+        <Navbar className="mb-4">
 
             <NavbarBrand>
                 {/*<AcmeLogo />*/}
-                <Link href="/" className="font-bold text-inherit">HOME</Link>
+                <Link to="/" className="font-bold text-inherit">HOME</Link>
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
 
                 <NavbarItem>
-                    <Link href={"productsPage.jsx"} color="foreground">Products</Link>
+                    <Link to="productsPage.jsx" color="foreground">Products</Link>
                 </NavbarItem>
 
-                <NavbarItem isActive>
-                    <Link href={".jsx"} color="foreground">Integrations</Link>
+                <NavbarItem>
+                    <Link to="cart.jsx" color="foreground">Cart {cartItems.length}</Link>
                 </NavbarItem>
 
             </NavbarContent>
 
             <NavbarContent justify="end">
                 <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Login</Link>
+                    <Link to="#">Login</Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Button as={Link} color="primary" href="#" variant="flat">
