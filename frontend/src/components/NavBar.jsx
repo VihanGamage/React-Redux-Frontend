@@ -1,8 +1,10 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
-// import {AcmeLogo} from "./AcmeLogo.jsx";
 import {useSelector} from "react-redux";
 import {Link} from 'react-router-dom'
+import {Badge, IconButton} from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import HomeIcon from '@mui/icons-material/Home';
 
 export default function NavBar() {
     const cartItems = useSelector(state => state.cart.cart)
@@ -10,19 +12,32 @@ export default function NavBar() {
         <Navbar className="mb-4">
 
             <NavbarBrand>
-                {/*<AcmeLogo />*/}
-                <Link to="/" className="font-bold text-inherit">HOME</Link>
+                <Link to="Home.jsx" className="font-bold text-inherit flex">
+                    <HomeIcon color="error" />
+                    <p>E COMMERCE APP</p>
+                </Link>
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
 
                 <NavbarItem>
-                    <Link to="productsPage.jsx" color="foreground">Products</Link>
+                    <Link to="ProductsPage.jsx" color="foreground">Products</Link>
                 </NavbarItem>
 
                 <NavbarItem>
-                    <Link to="cart.jsx" color="foreground">Cart {cartItems.length}</Link>
+                    <Link to="test.jsx" color="foreground">Test</Link>
                 </NavbarItem>
+                
+                <NavbarItem>
+                    <Link to="cart.jsx" color="foreground">
+                        <Badge badgeContent={cartItems.length} color="primary">
+                            <ShoppingCartIcon color="action" />
+                        </Badge>
+                    </Link>
+                </NavbarItem>
+
+
+
 
             </NavbarContent>
 
