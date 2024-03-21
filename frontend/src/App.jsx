@@ -8,17 +8,17 @@ import Home from "./Home.jsx";
 function App() {
 
   return (
-    <>
-        <Routes>
-            <Route path="/Home.jsx" element={<Home/>}/>
-            <Route path="/ProductsPage.jsx" element={<ProductsPage/>}/>
-            <Route path="/Cart.jsx" element={<Cart/>}/>
-            <Route path="/Test.jsx" element={<Test/>}/>
-            <Route path="/DeliveryForm.jsx" element={<DeliveryForm/>}/>
+      <>
+          <Routes>
+              <Route path="/Home.jsx" element={<Home/>}/>
+              <Route path="/ProductsPage.jsx" element={<ProductsPage/>}/>
+              <Route path="/Cart.jsx" element={<Cart/>}/>
+              <Route path="/Test.jsx" element={<Test/>}/>
+              <Route path="/DeliveryForm.jsx" element={<DeliveryForm/>}/>
 
 
-        </Routes>
-    </>
+          </Routes>
+      </>
   )
 }
 
